@@ -21,12 +21,15 @@ class Render {
 
         $reading_speed = get_option(Settings::OPTION_NAME, Settings::DEFAULT_SPEED);
         $reading_time = $this->calculate_reading_time($post->post_content, $reading_speed);
+        $word_count = str_word_count(strip_tags($post->post_content));
 
-        return sprintf(
+        $output = sprintf(
             '<div class="reading-time-block"><span>%s:</span> %s</div>',
             esc_html__('Estimated Reading Time', 'reading-time-block'),
             esc_html($reading_time)
         );
+
+        return apply_filters('reading_time_block_output', $output, $reading_time, $word_count);
     }
 
     /**
@@ -42,16 +45,16 @@ class Render {
         $seconds = floor(($word_count % $speed) / ($speed / 60));
 
         if ($minutes < 1) {
-            return __('Less than a minute', 'reading-time-block');
+            return esc_html__('Less than a minute', 'reading-time-block');
         }
 
         if ($seconds > 30) {
             $minutes++;
         }
 
-        return sprintf(
+        return esc_html(sprintf(
             _n('%d minute', '%d minutes', $minutes, 'reading-time-block'),
             $minutes
-        );
+        ));
     }
 }

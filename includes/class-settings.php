@@ -16,9 +16,8 @@ class Settings {
      * Registers the setting and adds it to the "Reading" settings page.
      */
     public function register_settings() {
-        // Register the setting
         register_setting(
-            'reading', // The settings group
+            'reading',
             self::OPTION_NAME,
             [
                 'type' => 'integer',
@@ -28,7 +27,6 @@ class Settings {
             ]
         );
 
-        // Add the settings field
         add_settings_field(
             'reading_time_speed',
             __('Reading Speed (WPM)', 'reading-time-block'),
@@ -43,36 +41,42 @@ class Settings {
      */
     public function render_speed_field() {
         $value = get_option(self::OPTION_NAME, self::DEFAULT_SPEED);
-        echo '<input 
-                type="number" 
-                id="reading_time_speed" 
-                name="' . esc_attr(self::OPTION_NAME) . '" 
-                value="' . esc_attr($value) . '" 
-                min="125" 
-                max="300" 
-                step="5">';
-        echo '<p class="description">' . esc_html__('Adjust the average reading speed (words per minute).', 'reading-time-block') . '</p>';
-        echo '<ul id="reading_speed_options">
-                <li><a href="#" data-value="125">125 WPM:</a> Technical or dense content</li>
-                <li><a href="#" data-value="150">150 WPM:</a> Technical or dense content</li>
-                <li><a href="#" data-value="200">200 WPM:</a> Average web content</li>
-                <li><a href="#" data-value="250">250 WPM:</a> Average web content</li>
-                <li><a href="#" data-value="300">300 WPM:</a> Fiction or light reading</li>
-              </ul>';
-    
-        echo '<script>
-                document.addEventListener("DOMContentLoaded", function () {
-                    const speedInput = document.getElementById("reading_time_speed");
-                    const options = document.querySelectorAll("#reading_speed_options a");
-                    
-                    options.forEach(option => {
-                        option.addEventListener("click", function (event) {
-                            event.preventDefault();
-                            const value = this.dataset.value;
-                            speedInput.value = value;
-                        });
+        ?>
+        <input
+            type="number"
+            id="reading_time_speed"
+            name="<?php echo esc_attr(self::OPTION_NAME); ?>"
+            value="<?php echo esc_attr($value); ?>"
+            min="125"
+            max="300"
+            step="5"
+        />
+        <p class="description">
+            <?php echo esc_html__('Adjust the average reading speed (words per minute).', 'reading-time-block'); ?>
+        </p>
+
+        <ul id="reading_speed_options">
+            <li><a href="#" data-value="125"><?php echo esc_html__('125 WPM:', 'reading-time-block'); ?></a> <?php echo esc_html__('Technical or dense content', 'reading-time-block'); ?></li>
+            <li><a href="#" data-value="150"><?php echo esc_html__('150 WPM:', 'reading-time-block'); ?></a> <?php echo esc_html__('Technical or dense content', 'reading-time-block'); ?></li>
+            <li><a href="#" data-value="200"><?php echo esc_html__('200 WPM:', 'reading-time-block'); ?></a> <?php echo esc_html__('Average web content', 'reading-time-block'); ?></li>
+            <li><a href="#" data-value="250"><?php echo esc_html__('250 WPM:', 'reading-time-block'); ?></a> <?php echo esc_html__('Average web content', 'reading-time-block'); ?></li>
+            <li><a href="#" data-value="300"><?php echo esc_html__('300 WPM:', 'reading-time-block'); ?></a> <?php echo esc_html__('Fiction or light reading', 'reading-time-block'); ?></li>
+        </ul>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const speedInput = document.getElementById("reading_time_speed");
+                const options = document.querySelectorAll("#reading_speed_options a");
+
+                options.forEach(option => {
+                    option.addEventListener("click", function (event) {
+                        event.preventDefault();
+                        const value = this.dataset.value;
+                        speedInput.value = value;
                     });
                 });
-              </script>';
+            });
+        </script>
+        <?php
     }
 }
