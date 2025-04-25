@@ -1,0 +1,103 @@
+# Copyright (C) 2025 Noah Stewart
+# This file is distributed under the same license as the Reading Time Block plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Reading Time Block 1.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/reading-time-block\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-04-25T03:28:11+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: reading-time-block\n"
+
+#. Plugin Name of the plugin
+#: reading-time-block.php
+msgid "Reading Time Block"
+msgstr ""
+
+#. Description of the plugin
+#: reading-time-block.php
+msgid "A simple block that displays estimated reading time."
+msgstr ""
+
+#. Author of the plugin
+#: reading-time-block.php
+msgid "Noah Stewart"
+msgstr ""
+
+#: includes/class-render.php:28
+msgid "Estimated Reading Time"
+msgstr ""
+
+#: includes/class-render.php:48
+msgid "Less than a minute"
+msgstr ""
+
+#: includes/class-render.php:56
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-settings.php:24
+msgid "Adjust the average reading speed in words per minute."
+msgstr ""
+
+#: includes/class-settings.php:32
+msgid "Reading Speed (WPM)"
+msgstr ""
+
+#: includes/class-settings.php:55
+msgid "Adjust the average reading speed (words per minute)."
+msgstr ""
+
+#: includes/class-settings.php:59
+msgid "125 WPM:"
+msgstr ""
+
+#: includes/class-settings.php:59
+#: includes/class-settings.php:60
+msgid "Technical or dense content"
+msgstr ""
+
+#: includes/class-settings.php:60
+msgid "150 WPM:"
+msgstr ""
+
+#: includes/class-settings.php:61
+msgid "200 WPM:"
+msgstr ""
+
+#: includes/class-settings.php:61
+#: includes/class-settings.php:62
+msgid "Average web content"
+msgstr ""
+
+#: includes/class-settings.php:62
+msgid "250 WPM:"
+msgstr ""
+
+#: includes/class-settings.php:63
+msgid "300 WPM:"
+msgstr ""
+
+#: includes/class-settings.php:63
+msgid "Fiction or light reading"
+msgstr ""
+
+#: block.js:7
+msgid "Reading Time"
+msgstr ""
+
+#: block.js:14
+msgid "Reading time will be calculated based on the post content."
+msgstr ""
+
+#: block.json
+msgctxt "block title"
+msgid "Reading Time"
+msgstr ""
