@@ -1,7 +1,7 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 2,
-  "name": "reading-time-block/block",
+  "name": "reading-time-block/reading-time",
   "title": "Reading Time",
   "category": "widgets",
   "icon": "clock",

@@ -1,13 +1,13 @@
 # Reading Time Block
 
 **Contributors:** Noah Stewart  
-**Tags:** gutenberg, block, reading time, estimated time, block editor  
-**Requires at least:** 5.0  
+**Tags:** gutenberg, block, reading time, estimated time, block editor, shortcode
+**Requires at least:** 6.0
 **Tested up to:** 6.8
 **Requires PHP:** 7.2  
-**Stable tag:** 1.0  
-**License:** MIT  
-**License URI:** https://opensource.org/licenses/MIT  
+**Stable tag:** 1.1.0
+**License:** GPL-2.0-or-later
+**License URI:** https://www.gnu.org/licenses/gpl-2.0.html
 
 A simple WordPress plugin that adds a Gutenberg block to display the estimated reading time for the current post.
 
@@ -22,6 +22,8 @@ The **Reading Time Block** plugin calculates and displays an estimated reading t
 - Simple and lightweight, built with plain JavaScript and PHP.
 - Fully compatible with the WordPress block editor (Gutenberg).
 - Server-rendered block for dynamic and accurate content output.
+- Shortcode support: [reading_time]
+- Translation-ready.
 
 ---
 
@@ -39,6 +41,20 @@ The **Reading Time Block** plugin calculates and displays an estimated reading t
 2. Add the **Reading Time** block from the "Widgets" category.
 3. Save and view the post/page to see the dynamically calculated reading time.
 
+### Shortcode
+
+You can also insert the estimated reading time manually anywhere using the shortcode:
+[reading_time]
+
+
+**Optional shortcode attributes:**
+- `show_label="true"` (default: true) – whether to display the label text.
+- `label="Custom Label"` – custom label to display instead of the default.
+
+Example:
+[reading_time show_label="true" label="Approximate Read Time"]
+
+
 ---
 
 ## FAQ
@@ -49,9 +65,19 @@ The plugin calculates reading time using an average reading speed of 200 words p
 ### **Can I customize the average reading speed?**
 Currently, the average reading speed is fixed at 200 words per minute. Future versions may allow customization.
 
+### **Can I use this plugin with classic editors or templates?**
+Yes.  
+The included shortcode `[reading_time]` can be used inside classic editors, widgets, or PHP templates (`do_shortcode('[reading_time]')`).
+
 ---
 
 ## Changelog
+
+### 1.1.0
+- Added shortcode `[reading_time]` support.
+- Added admin option to customize reading speed (WPM).
+- Improved translation support (i18n).
+- Added filter `reading_time_block_output` for customizing output.
 
 ### 1.0
 - Initial release.
@@ -61,4 +87,4 @@ Currently, the average reading speed is fixed at 200 words per minute. Future ve
 
 ## License
 
-This plugin is licensed under the MIT License. See the [MIT License](https://opensource.org/licenses/MIT) for more details.
+This plugin is licensed under the GPLv2 or later.
