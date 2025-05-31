@@ -21,7 +21,7 @@ class Render {
 
         $reading_speed = get_option(Settings::OPTION_NAME, Settings::DEFAULT_SPEED);
         $reading_time = $this->calculate_reading_time($post->post_content, $reading_speed);
-        $word_count = str_word_count(strip_tags($post->post_content));
+        $word_count = str_word_count(wp_strip_all_tags($post->post_content));
 
         $output = sprintf(
             '<div class="reading-time-block"><span>%s:</span> %s</div>',
@@ -40,7 +40,7 @@ class Render {
      * @return string Estimated reading time.
      */
     private function calculate_reading_time($content, $speed) {
-        $word_count = str_word_count(strip_tags($content));
+        $word_count = str_word_count(wp_strip_all_tags($content));
         $minutes = floor($word_count / $speed);
         $seconds = floor(($word_count % $speed) / ($speed / 60));
 
@@ -52,9 +52,7 @@ class Render {
             $minutes++;
         }
 
-        return esc_html(sprintf(
-            _n('%d minute', '%d minutes', $minutes, 'reading-time-block'),
-            $minutes
-        ));
+        /* translators: %d is time in minutes */
+        return esc_html(sprintf(_n('%d minute', '%d minutes', $minutes, 'reading-time-block'), $minutes));
     }
 }

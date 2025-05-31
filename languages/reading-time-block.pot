@@ -9,23 +9,23 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-25T03:28:11+00:00\n"
+"POT-Creation-Date: 2025-05-21T02:34:01+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: reading-time-block\n"
 
 #. Plugin Name of the plugin
-#: reading-time-block.php
+#: reading-time.php
 msgid "Reading Time Block"
 msgstr ""
 
 #. Description of the plugin
-#: reading-time-block.php
+#: reading-time.php
 msgid "A simple block that displays estimated reading time."
 msgstr ""
 
 #. Author of the plugin
-#: reading-time-block.php
+#: reading-time.php
 msgid "Noah Stewart"
 msgstr ""
 
@@ -37,6 +37,7 @@ msgstr ""
 msgid "Less than a minute"
 msgstr ""
 
+#. translators: %d is time in minutes
 #: includes/class-render.php:56
 msgid "%d minute"
 msgid_plural "%d minutes"
@@ -55,42 +56,28 @@ msgstr ""
 msgid "Adjust the average reading speed (words per minute)."
 msgstr ""
 
-#: includes/class-settings.php:59
-msgid "125 WPM:"
-msgstr ""
-
-#: includes/class-settings.php:59
 #: includes/class-settings.php:60
-msgid "Technical or dense content"
-msgstr ""
-
-#: includes/class-settings.php:60
-msgid "150 WPM:"
+msgid "Very dense or academic content"
 msgstr ""
 
 #: includes/class-settings.php:61
-msgid "200 WPM:"
+msgid "Technical or professional content"
 msgstr ""
 
-#: includes/class-settings.php:61
 #: includes/class-settings.php:62
 msgid "Average web content"
 msgstr ""
 
-#: includes/class-settings.php:62
-msgid "250 WPM:"
-msgstr ""
-
 #: includes/class-settings.php:63
-msgid "300 WPM:"
+msgid "Fast-paced blogs or light articles"
 msgstr ""
 
-#: includes/class-settings.php:63
-msgid "Fiction or light reading"
+#: includes/class-settings.php:64
+msgid "Fiction or casual reading"
 msgstr ""
 
-#: block.js:7
-msgid "Reading Time"
+#: includes/class-settings.php:67
+msgid "WPM"
 msgstr ""
 
 #: block.js:14

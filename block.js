@@ -3,8 +3,8 @@
     const { createElement } = wp.element;
     const { __ } = wp.i18n;
 
-    registerBlockType('reading-time-block/block', {
-        title: __('Reading Time', 'reading-time-block'),
+    registerBlockType('reading-time-block/reading-time', {
+        title: 'Reading Time',
         icon: 'clock',
         category: 'widgets',
         edit: function () {
