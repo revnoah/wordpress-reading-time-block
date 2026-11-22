@@ -2,9 +2,9 @@
 Contributors: revnoah  
 Tags: gutenberg, block, reading time, estimated time, block editor  
 Requires at least: 6.0
-Tested up to: 6.8
+Tested up to: 7.1
 Requires PHP: 7.2  
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 Tags: reading time, reading speed
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
@@ -21,9 +21,10 @@ This is ideal for blogs, documentation, or any content where you want to set exp
 
 = Features =
 * Adds a block to the Gutenberg editor for reading time.
+* Adds a `[reading_time]` shortcode.
 * Automatically calculates based on post content.
 * Supports customizable reading speed (WPM) via **Settings → Reading**.
-* Lightweight and fast—no JS build step required.
+* Lightweight and fast.
 * Fully translatable and namespace-isolated.
 
 == Installation ==
@@ -35,14 +36,14 @@ This is ideal for blogs, documentation, or any content where you want to set exp
 
 == Frequently Asked Questions ==
 
+= Can I use a shortcode? =
+Yes. Add `[reading_time]` in the Classic Editor or a Shortcode block. Use `[reading_time show_label="false"]` to display just the estimate, or `[reading_time label="Approximate Read Time"]` to customize the label.
+
 = How is the reading time calculated? =
 The plugin counts the number of words in the post content and divides by the configured reading speed in words per minute (WPM). It then rounds up to the nearest minute if necessary.
 
 = Can I change the reading speed? =
 Yes. You can adjust the reading speed via a numeric input or preset values in **Settings → Reading**.
-
-= Does this plugin require JavaScript building or Node.js? =
-No, the block is written in plain JavaScript and PHP, so there's no build step or asset compilation required.
 
 == Screenshots ==
 
@@ -51,6 +52,9 @@ No, the block is written in plain JavaScript and PHP, so there's no build step o
 3. The WPM setting in Settings → Reading.
 
 == Changelog ==
+
+= 1.2.3 =
+* WordPress compatibility testing for the latest release.
 
 = 1.2.2 =
 - Moved javascript to separate file, enqueued file
