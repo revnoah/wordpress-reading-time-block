@@ -1,5 +1,6 @@
 (function (wp) {
     const { registerBlockType } = wp.blocks;
+    const { useBlockProps } = wp.blockEditor;
     const { createElement } = wp.element;
     const { __ } = wp.i18n;
 
@@ -10,7 +11,7 @@
         edit: function () {
             return createElement(
                 'p',
-                {},
+                useBlockProps(),
                 __('Reading time will be calculated based on the post content.', 'reading-time-block')
             );
         },
